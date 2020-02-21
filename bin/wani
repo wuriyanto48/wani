@@ -37,7 +37,7 @@ const main = () => {
 	}
 
 	if (args[0] === '-version') {
-		console.log(index.setColor(`geny version ${VERSION}`, 'red'));
+		console.log(index.setColor(`wani version ${VERSION}`, 'red'));
 		process.exit(0);
 	}
 		
