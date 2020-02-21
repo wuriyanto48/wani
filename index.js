@@ -75,7 +75,7 @@ const exec = (host, cb) => {
 				host = location.href;
 			}
 
-			get(host, cb);
+			exec(host, cb);
 		} else {
 			cb(response);
 		}
