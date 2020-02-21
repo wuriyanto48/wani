@@ -72,6 +72,7 @@ const exec = (host, cb) => {
 	httpClient = (url.protocol === 'https:') ? https : httpClient;
 
 	httpClient.get(url, (response) => {
+        // handle redirect
 		if (response.headers.location) {
 			let location = response.headers.location;
 			if (location.match(/^http/)) {
