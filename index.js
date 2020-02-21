@@ -29,7 +29,7 @@ const COLORS = {
 };
 
 const setColor = (text, color) => {
-    return `${COLORS[color]}${text}${COLORS.reset}`;
+	return `${COLORS[color]}${text}${COLORS.reset}`;
 };
 
 const callback = (response) => {
@@ -48,13 +48,13 @@ const callback = (response) => {
 		response.resume();
 		return;
 	}
-	
+
 	const outStream = fs.createWriteStream(fileName, {flags: 'w'});
 	response.on('data', (chunk) => {
-        // add loading bar
-        process.stdout.write(Buffer.from([46, 32]));
-        
-        // write each chunk to stream
+		// add loading bar
+		process.stdout.write(Buffer.from([46, 32]));
+		
+		// write each chunk to stream
 		outStream.write(chunk);
 	});
 
@@ -68,11 +68,11 @@ const exec = (host, cb) => {
 	const url = new URL(host);
 	let httpClient = http;
 
-    // check if url uses ssl
+	// check if url uses ssl
 	httpClient = (url.protocol === 'https:') ? https : httpClient;
 
 	httpClient.get(url, (response) => {
-        // handle redirect
+		// handle redirect
 		if (response.headers.location) {
 			let location = response.headers.location;
 			if (location.match(/^http/)) {
