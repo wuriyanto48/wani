@@ -51,7 +51,10 @@ const callback = (response) => {
 	
 	const outStream = fs.createWriteStream(fileName, {flags: 'w'});
 	response.on('data', (chunk) => {
-		process.stdout.write(Buffer.from([46, 32]));
+        // add loading bar
+        process.stdout.write(Buffer.from([46, 32]));
+        
+        // write each chunk to stream
 		outStream.write(chunk);
 	});
 
@@ -65,6 +68,7 @@ const exec = (host, cb) => {
 	const url = new URL(host);
 	let httpClient = http;
 
+    // check if url uses ssl
 	httpClient = (url.protocol === 'https:') ? https : httpClient;
 
 	httpClient.get(url, (response) => {
