@@ -2,10 +2,11 @@
   "name": "wani",
   "version": "1.0.0",
   "description": "file downloader written in node",
+  "bin": "./bin/wani",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "wuriyanto48@yahoo.co.id",
+  "license": "MIT"
 }
