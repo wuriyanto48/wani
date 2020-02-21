@@ -62,7 +62,7 @@ const callback = (response) => {
 		process.stdout.write('\n');
 		process.stdout.write(`download ${fileName} finish\n`);
 	});
-}
+};
 
 const exec = (host, cb) => {
 	const url = new URL(host);
@@ -87,6 +87,6 @@ const exec = (host, cb) => {
 	}).on('error', (error) => {
 		process.stdout.write(`${error.message}\n`);
 	});
-}
+};
 
 module.exports = {setColor, exec, callback};
